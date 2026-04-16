@@ -6,7 +6,7 @@
   --text: #111827;
   --muted: #475569;
   --accent: #b91c1c;
-  --hero-image: url("https://wallpapercave.com/wp/wp10816720.jpg");
+  --hero-image: url("https://images3.alphacoders.com/126/thumb-1920-1269904.png");
 }
 
 body.dark-mode {
@@ -130,7 +130,8 @@ body.dark-mode .site-header {
   border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(16px);
 }
 
 .hero-link:hover {
@@ -149,28 +150,25 @@ body.dark-mode .hero-link {
 .benefit-list article,
 .feature-list div,
 .spec-list li,
-.usage-list li {
-  background: var(--surface);
-}
-
-.hero-content,
-.intro div,
-.card,
-.benefit-list article,
-.feature-list div,
-.spec-list li,
-.usage-list li {
+.usage-list li,
+.design-content > div {
+  background: var(--surface-soft);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--border);
+  border-radius: 22px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.hero-content,
-.intro div,
-.card,
-.benefit-list article,
-.feature-list div,
-.spec-list li,
-.usage-list li {
-  border-radius: 22px;
+.hero-content:hover,
+.intro div:hover,
+.card:hover,
+.benefit-list article:hover,
+.feature-list div:hover,
+.spec-list li:hover,
+.usage-list li:hover,
+.design-content > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.14);
 }
 
 .hero-content {
@@ -297,6 +295,12 @@ main {
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.design-content > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
 }
 
 .design-content p {
@@ -313,8 +317,15 @@ main {
 .feature-list div {
   padding: 1.2rem 1.3rem;
   border-radius: 18px;
-  background: var(--surface);
+  background: var(--surface-soft);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-list div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
 }
 
 .feature-list strong {
@@ -368,6 +379,12 @@ main {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1.35rem 1.4rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.benefit-list article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
 }
 
 .benefit-list h3 {
@@ -402,6 +419,13 @@ main {
   color: var(--text);
   line-height: 1.7;
   font-size: 0.98rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.spec-list li:hover,
+.usage-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
 }
 
 .usage-list li {
@@ -459,6 +483,33 @@ main {
 .offer-card a:hover {
   background: #7f1d1d;
   transform: translateY(-1px);
+}
+
+.image-section {
+  padding: 2.5rem 0;
+}
+
+.image-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--surface-soft);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
 }
 
 footer {

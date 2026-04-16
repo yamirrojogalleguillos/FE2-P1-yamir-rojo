@@ -1,9 +1,10 @@
 :root {
-  --bg: #f5f6f7;
-  --surface: #ffffff;
-  --border: #d9dbe0;
+  --bg: #edf2f7;
+  --surface: #e2e8f0;
+  --surface-soft: rgba(255, 255, 255, 0.82);
+  --border: #cbd5e1;
   --text: #111827;
-  --muted: #6b7280;
+  --muted: #475569;
   --accent: #b91c1c;
   --hero-image: url("https://wallpapercave.com/wp/wp10816720.jpg");
 }
@@ -11,6 +12,7 @@
 body.dark-mode {
   --bg: #020617;
   --surface: #111827;
+  --surface-soft: rgba(15, 23, 42, 0.88);
   --border: #334155;
   --text: #e2e8f0;
   --muted: #94a3b8;
@@ -124,8 +126,8 @@ body.dark-mode .site-header {
   position: relative;
   width: min(96%, 980px);
   padding: 3rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
   transition: transform 0.25s ease, border-color 0.25s ease;
@@ -137,8 +139,38 @@ body.dark-mode .site-header {
 }
 
 body.dark-mode .hero-link {
-  background: rgba(17, 24, 39, 0.88);
+  background: var(--surface-soft);
   border-color: rgba(148, 163, 184, 0.18);
+}
+
+.hero-content,
+.intro div,
+.card,
+.benefit-list article,
+.feature-list div,
+.spec-list li,
+.usage-list li {
+  background: var(--surface);
+}
+
+.hero-content,
+.intro div,
+.card,
+.benefit-list article,
+.feature-list div,
+.spec-list li,
+.usage-list li {
+  border: 1px solid var(--border);
+}
+
+.hero-content,
+.intro div,
+.card,
+.benefit-list article,
+.feature-list div,
+.spec-list li,
+.usage-list li {
+  border-radius: 22px;
 }
 
 .hero-content {
@@ -206,9 +238,17 @@ main {
 .intro h2,
 .features h2,
 .design h2,
-.offer h2 {
+.offer h2,
+.benefits h2,
+.specs h2,
+.usos h2 {
   font-size: 2rem;
   margin: 0 0 1rem;
+  display: inline-block;
+  background: var(--surface-soft);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
 }
 
 .intro p {
@@ -226,7 +266,7 @@ main {
 }
 
 .card {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 1.75rem;
@@ -265,7 +305,7 @@ main {
 .feature-list div {
   padding: 1.2rem 1.3rem;
   border-radius: 18px;
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--border);
 }
 
@@ -285,7 +325,7 @@ main {
   gap: 1.2rem;
   padding: 2rem 2.2rem;
   border-radius: 24px;
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--border);
 }
 
@@ -381,8 +421,17 @@ main {
   .benefit-list {
     grid-template-columns: 1fr;
   }
-}
 
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .theme-toggle {
+    width: auto;
+    margin-top: 0.5rem;
+  }
+}
 
 .offer-card a {
   display: inline-flex;
@@ -419,22 +468,41 @@ footer {
 @media (max-width: 640px) {
   .site-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .site-header nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    margin-top: 0.75rem;
   }
 
   .hero {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
 
   .hero-link {
-    padding: 2.25rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
   .hero h1 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
   }
 
   main {
     padding: 2rem 1rem 3rem;
+  }
+
+  .features .cards,
+  .benefit-list,
+  .design-content,
+  .spec-list,
+  .usage-list {
+    grid-template-columns: 1fr;
   }
 }

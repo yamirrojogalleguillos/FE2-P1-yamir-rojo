@@ -4,3 +4,4 @@ necesito que el background complete toda la imagen, sin ningún tipo de efecto, 
 necesito agregar caracteristicas principales, los beneficios del producto, especifcaciones técnicas (que sea en una lista más minimalista en vez de un box)
 usos y ventajas sobre otros productos "tipo switch" y que hable sobre la ventaja de poder emular e hacer como una consola tipo retro con juegos actuales también
 eliminame la sección de oferta y cambialo por un botón que diga "COMPRA AHORA!" que sea un botón llamativo, también añadame a la página un botón arriba que me permita elegir entre modo oscuro y modo claro
+el modo oscuro funciona bien, pero los textos no se visualizan, porque no es del contraste que necesitan, añadame fondos por cada texto, para que se puedan observar claramente el texto, necesito que la página completa se adapte para dispositivos móviles, y que los fondos de los textos no sean blancos, incluyendo los titulos y subtitulos

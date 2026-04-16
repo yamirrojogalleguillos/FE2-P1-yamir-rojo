@@ -1,10 +1,11 @@
 :root {
-  --bg: #071019;
-  --surface: rgba(10, 25, 49, 0.92);
-  --accent: #ff5b79;
-  --accent-soft: #ff8da3;
-  --text: #eef5ff;
-  --muted: #9bb9d8;
+  --bg: #f5f6f7;
+  --surface: #ffffff;
+  --border: #d9dbe0;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #b91c1c;
+  --hero-image: url("https://static.wikia.nocookie.net/terraria_gamepedia/images/4/4c/Snow_biome_background_9.png/revision/latest/scale-to-width-down/1000?cb=20200814183525");
 }
 
 * {
@@ -15,12 +16,17 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, #05111f, #081528 65%, #0a1732 100%);
+  background: var(--bg);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .site-header {
@@ -30,22 +36,30 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(7, 16, 25, 0.86);
-  backdrop-filter: blur(12px);
+  gap: 2rem;
+  padding: 1.25rem clamp(1rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .site-header nav a {
-  margin-left: 1.4rem;
   font-size: 0.95rem;
   color: var(--muted);
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .site-header nav a:hover {
@@ -53,150 +67,153 @@ a {
 }
 
 .hero {
-  min-height: 82vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1400&q=80');
+  min-height: 78vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 0;
+  background-image: var(--hero-image);
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-.hero-link {
-  width: 100%;
-  display: block;
-  position: relative;
-}
-
-.hero-overlay {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 17, 33, 0.48), rgba(5, 17, 33, 0.95));
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-link {
+  position: relative;
+  width: min(96%, 980px);
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(185, 28, 28, 0.22);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  display: grid;
+  gap: 1.5rem;
   text-align: center;
 }
 
 .eyebrow {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: var(--accent);
-  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-size: 0.8rem;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
 }
 
 .hero p {
-  margin: 1.5rem auto 2rem;
-  max-width: 620px;
-  color: #d8e2f2;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  margin: 0;
+  color: var(--text);
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  font-size: 1rem;
 }
 
 .hero button {
-  border: none;
-  background: linear-gradient(135deg, var(--accent), #ff7c96);
-  color: #fff;
-  padding: 1rem 2rem;
+  border: 1px solid rgba(185, 28, 28, 0.15);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.95rem 2rem;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.98rem;
   cursor: pointer;
-  box-shadow: 0 18px 40px rgba(255, 91, 121, 0.22);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .hero button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 48px rgba(255, 91, 121, 0.28);
+  background: #7f1d1d;
+  transform: translateY(-1px);
 }
 
 main {
-  padding: 3rem 2rem 4rem;
-  max-width: 1180px;
+  max-width: 1080px;
   margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
 }
 
-.intro {
-  text-align: center;
-  padding: 2.5rem 0;
+.intro,
+.features,
+.design,
+.offer {
+  padding: 2rem 0;
 }
 
-.intro h2 {
-  font-size: 2.1rem;
-  margin-bottom: 1rem;
+.intro h2,
+.features h2,
+.design h2,
+.offer h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
 }
 
 .intro p {
-  max-width: 740px;
+  max-width: 720px;
   margin: 0 auto;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.85;
+  font-size: 1rem;
 }
 
-.features {
-  padding: 2.5rem 0;
-}
-
-.features h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.cards {
+.features .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
   padding: 1.75rem;
-  backdrop-filter: blur(12px);
+  color: var(--text);
 }
 
 .card h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #fff;
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
 }
 
 .card p {
-  margin: 0.8rem 0 0;
+  margin: 0;
   color: var(--muted);
-  line-height: 1.65;
-}
-
-.design {
-  padding: 2.5rem 0;
+  line-height: 1.75;
 }
 
 .design-content {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
 }
 
-.design-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.design-content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
 }
 
 .feature-list {
@@ -205,102 +222,101 @@ main {
 }
 
 .feature-list div {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 1.25rem;
+  padding: 1.2rem 1.3rem;
   border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border);
 }
 
 .feature-list strong {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #fff;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 .feature-list p {
-  margin: 0;
+  margin: 0.5rem 0 0;
   color: var(--muted);
-  line-height: 1.6;
-}
-
-.offer {
-  margin-top: 3rem;
+  font-size: 0.95rem;
 }
 
 .offer-card {
-  background: linear-gradient(135deg, rgba(15, 34, 70, 0.94), rgba(9, 19, 38, 0.96));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2.5rem;
-  border-radius: 28px;
-  text-align: center;
+  display: grid;
+  gap: 1.2rem;
+  padding: 2rem 2.2rem;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
 }
 
 .offer-card span {
-  display: inline-block;
-  margin-bottom: 1rem;
   color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.85rem;
 }
 
 .offer-card h2 {
   margin: 0;
-  font-size: 2.4rem;
+  color: var(--text);
 }
 
 .offer-card p {
-  margin: 1rem auto 1.8rem;
-  max-width: 640px;
+  margin: 0;
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .offer-card a {
-  display: inline-block;
-  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.95rem 1.8rem;
   background: var(--accent);
+  color: #ffffff;
   border-radius: 999px;
-  color: white;
   font-weight: 600;
-  transition: transform 0.25s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .offer-card a:hover {
-  transform: translateY(-2px);
+  background: #7f1d1d;
+  transform: translateY(-1px);
 }
 
 footer {
+  padding: 2rem 0 2.5rem;
   text-align: center;
-  padding: 1.5rem 0 2rem;
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 900px) {
+  .features .cards,
   .design-content {
     grid-template-columns: 1fr;
   }
-
-  .site-header {
-    padding: 1rem 1.25rem;
-  }
-
-  .hero-content {
-    padding: 3rem 1.5rem;
-  }
 }
 
-@media (max-width: 600px) {
-  .site-header nav a {
-    margin-left: 0.9rem;
-    font-size: 0.9rem;
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero-link {
+    padding: 2.25rem 1.5rem;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
+  }
+
+  main {
+    padding: 2rem 1rem 3rem;
   }
 }

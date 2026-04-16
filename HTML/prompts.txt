@@ -1,1 +1,2 @@
 página web que sea atractiva, que pueda añadir una imagen de fondo con un link, que trate sobre una pequeña consola de videojuegos portatil, handheld, tipo switch, que ofrezca el producto y sus caracteristicas, que sea visualmente atractiva
+dejame cambiar el background con un link de cualquier imagen, dejandome el link como "example", cambiame el diseño visual por algo más formal y minimalista y estilos css más trabajado, logrando una aparencia más ordenada y atractiva.

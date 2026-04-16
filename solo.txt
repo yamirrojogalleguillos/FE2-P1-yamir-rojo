@@ -1,2 +1,0 @@
-git config --global user.name "yamirrojogalleguillos"
-git config --global user.email yamir.rojo@inacapmail.cl

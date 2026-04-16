@@ -14,18 +14,18 @@
       <a href="#beneficios">Beneficios</a>
       <a href="#especificaciones">Especificaciones</a>
       <a href="#usos">Usos</a>
-      <a href="#oferta">Oferta</a>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button">Modo oscuro</button>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <a href="https://example.com" class="hero-link" target="_blank" rel="noopener noreferrer" aria-label="Ver oferta de la consola RED">
+      <a href="https://i.pinimg.com/236x/64/7d/b1/647db1ada9944ba0279e7fc6e8b74b39.jpg" class="hero-link" target="_blank" rel="noopener noreferrer" aria-label="Comprar RED ahora">
         <div class="hero-content">
           <small class="eyebrow">Consola handheld minimalista</small>
           <h1>RED</h1>
           <p>Una portátil moderna, compacta y elegante para jugar con estilo.</p>
-          <button>Visitar ejemplo</button>
+          <button>COMPRA AHORA!</button>
         </div>
       </a>
     </section>
@@ -81,8 +81,8 @@
     <section class="specs" id="especificaciones">
       <h2>Especificaciones técnicas</h2>
       <ul class="spec-list">
-        <li>Procesador multicore optimizado para juegos portátiles.</li>
-        <li>Pantalla táctil de 7" con resolución clara y brillo uniforme.</li>
+        <li>Procesador multicore AMD Ryzen 7 optimizado para juegos portátiles.</li>
+        <li>Pantalla táctil AMOLED de 7" con resolución clara y brillo uniforme.</li>
         <li>Batería de larga duración con carga rápida USB-C.</li>
         <li>Memoria interna ampliable mediante microSD.</li>
         <li>Bluetooth y Wi-Fi para mandos y accesorios inalámbricos.</li>
@@ -124,18 +124,26 @@
       </div>
     </section>
 
-    <section class="offer" id="oferta">
-      <div class="offer-card">
-        <span>Oferta especial</span>
-        <h2>Disponible ahora</h2>
-        <p>Visita el enlace de ejemplo para ver el producto y personalizar tu página con un fondo propio.</p>
-        <a href="https://static.wikia.nocookie.net/terraria_gamepedia/images/4/4c/Snow_biome_background_9.png/revision/latest/scale-to-width-down/1000?cb=20200814183525" target="_blank" rel="noopener noreferrer">Ver ejemplo</a>
-      </div>
-    </section>
   </main>
 
   <footer>
     <p>RED © 2026 | Consola portátil minimalista</p>
   </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+    document.body.classList.toggle('dark-mode', initialDark);
+    themeToggle.textContent = initialDark ? 'Modo claro' : 'Modo oscuro';
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>

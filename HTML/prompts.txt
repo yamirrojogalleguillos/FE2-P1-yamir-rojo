@@ -3,3 +3,4 @@ dejame cambiar el background con un link de cualquier imagen, dejandome el link 
 necesito que el background complete toda la imagen, sin ningún tipo de efecto, ni blur, ni opaco, nada, pero que complete la imagen de la página, ya que está en cuadrado
 necesito agregar caracteristicas principales, los beneficios del producto, especifcaciones técnicas (que sea en una lista más minimalista en vez de un box)
 usos y ventajas sobre otros productos "tipo switch" y que hable sobre la ventaja de poder emular e hacer como una consola tipo retro con juegos actuales también
+eliminame la sección de oferta y cambialo por un botón que diga "COMPRA AHORA!" que sea un botón llamativo, también añadame a la página un botón arriba que me permita elegir entre modo oscuro y modo claro

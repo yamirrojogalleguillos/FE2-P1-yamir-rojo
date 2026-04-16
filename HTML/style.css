@@ -5,7 +5,7 @@
   --text: #111827;
   --muted: #6b7280;
   --accent: #b91c1c;
-  --hero-image: url("https://static.wikia.nocookie.net/terraria_gamepedia/images/4/4c/Snow_biome_background_9.png/revision/latest/scale-to-width-down/1000?cb=20200814183525");
+  --hero-image: url("https://wallpapercave.com/wp/wp6659155.jpg");
 }
 
 * {
@@ -257,6 +257,83 @@ main {
   color: var(--muted);
   line-height: 1.75;
 }
+
+.benefit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.benefit-list article {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.35rem 1.4rem;
+}
+
+.benefit-list h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+}
+
+.benefit-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.spec-list,
+.usage-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto 0;
+  max-width: 740px;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.spec-list li,
+.usage-list li {
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.usage-list li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.usage-list li::before {
+  content: "•";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.benefits,
+.specs,
+.usos {
+  padding-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .features .cards,
+  .design-content,
+  .benefit-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .offer-card a {
   display: inline-flex;

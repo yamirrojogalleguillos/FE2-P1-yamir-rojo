@@ -1,2 +1,5 @@
 página web que sea atractiva, que pueda añadir una imagen de fondo con un link, que trate sobre una pequeña consola de videojuegos portatil, handheld, tipo switch, que ofrezca el producto y sus caracteristicas, que sea visualmente atractiva
 dejame cambiar el background con un link de cualquier imagen, dejandome el link como "example", cambiame el diseño visual por algo más formal y minimalista y estilos css más trabajado, logrando una aparencia más ordenada y atractiva.
+necesito que el background complete toda la imagen, sin ningún tipo de efecto, ni blur, ni opaco, nada, pero que complete la imagen de la página, ya que está en cuadrado
+necesito agregar caracteristicas principales, los beneficios del producto, especifcaciones técnicas (que sea en una lista más minimalista en vez de un box)
+usos y ventajas sobre otros productos "tipo switch" y que hable sobre la ventaja de poder emular e hacer como una consola tipo retro con juegos actuales también

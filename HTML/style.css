@@ -16,7 +16,10 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -40,7 +43,6 @@ img {
   padding: 1.25rem clamp(1rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(16px);
 }
 
 .logo {
@@ -71,17 +73,7 @@ img {
   display: grid;
   place-items: center;
   padding: 4rem 0;
-  background-image: var(--hero-image);
-  background-size: cover;
-  background-position: center;
   position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.18);
 }
 
 .hero-link {
